@@ -9,11 +9,16 @@ router.get('/', function (req, res) {
     res.send('respond with a resource ' + test);
 });
 
+/* 
+ * API call to get the highest prime 
+ * 
+ * https://blog.abelotech.com/posts/measure-execution-time-nodejs-javascript/
+ */
 router.post('/', function (req, res) {
-	var start = new Date();
+	var startTime = new Date();
 	var highestPrime = calculatePrimes(req.body.calculateTo);
-	var end = new Date() - start;
-	res.send('post to /prime. Highest prime up to ' + req.body.calculateTo + ' is: ' + highestPrime + '. It took ' + end + ' to process');
+	var endTime = new Date() - start;
+	res.json({ highestPrime: highestPrime, time: endTime });
 });
 
 module.exports = router;
