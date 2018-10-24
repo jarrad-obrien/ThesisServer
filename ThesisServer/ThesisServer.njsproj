@@ -31,7 +31,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="functions\calculatePrimes.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes\index.js" />
+    <Compile Include="routes\prime.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes\users.js" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
@@ -41,6 +47,7 @@
     <Content Include="views\error.pug" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="functions\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
