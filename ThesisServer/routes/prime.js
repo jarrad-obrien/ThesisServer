@@ -10,8 +10,10 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function (req, res) {
-    console.log(req.body);
-    res.send('post to /prime ' + req.body.calculateTo);
+	var start = new Date();
+	var highestPrime = calculatePrimes(req.body.calculateTo);
+	var end = new Date() - start;
+	res.send('post to /prime. Highest prime up to ' + req.body.calculateTo + ' is: ' + highestPrime + '. It took ' + end + ' to process');
 });
 
 module.exports = router;
