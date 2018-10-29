@@ -17,7 +17,7 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
 	var startTime = new Date();
 	var highestPrime = calculatePrimes(req.body.calculateTo);
-	var endTime = new Date() - start;
+	var endTime = new Date() - startTime;
 	res.json({ highestPrime: highestPrime, time: endTime });
 });
 
